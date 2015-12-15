@@ -2,8 +2,8 @@
 
 You should use template method when you want to delegate some portion of the code functionality to the concrete implementation.
 Let's say you have an abstract class which is a thread and has run method which is implemented inside this class. 
-Beside of this methof you have also two other method like acquire and release. 
-your run implementation looks like this
+Beside of this method you have also two other method like acquire and release. 
+your run implementation of the run method looks like this:
 
 public void run(){
 	
@@ -15,3 +15,10 @@ public void run(){
 
 In this case your template method is a run method an concrete implementation of the abstract class has implemetation for 
 acquire and release methods.
+
+2. Factory
+
+Factory pattern, by definition, is responsible for creating new objects. I like to think about it as a single place in my code where object production happens
+(the same as it is in e.g car factory).
+
+
