@@ -21,4 +21,24 @@ acquire and release methods.
 Factory pattern, by definition, is responsible for creating new objects. I like to think about it as a single place in my code where object production happens
 (the same as it is in e.g car factory).
 
+this is the example 
 
+public class CarFactory(){
+
+	public enum CarType{
+		SUV,
+		TRUCK
+	}
+	
+	private CarType carType = CarType.SUV;
+
+	public Car makeCar(){
+		if(carType == CarType.SUV){
+			//build suv
+		}else if(carType == CarType.TRUCK) {
+			//build truck
+		}		
+	}
+}
+
+This is of course the simplest example but right now you probably have the idea about the pattern. In next post I will try to present more advanced examples.  
