@@ -68,7 +68,7 @@ Ofcourse object creation can be change to something more conditional with some i
 file or system property and do some actions based on that.
 
 4. Bridge pattern
-
+Opisac na podstawie Socket w Javie
 
 
 
