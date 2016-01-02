@@ -67,6 +67,8 @@ platform.printMessage();
 Ofcourse object creation can be change to something more conditional with some if statement or you can inject is through dependency injection or even read some 
 file or system property and do some actions based on that.
 
+4. Bridge pattern
+
 
 
 
