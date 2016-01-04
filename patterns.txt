@@ -70,6 +70,8 @@ file or system property and do some actions based on that.
 4. Bridge pattern
 Opisac na podstawie Socket w Javie
 
+Presentation:https://sway.com/7qu8H4yTdj3u8Ow8
+
 
 
 
