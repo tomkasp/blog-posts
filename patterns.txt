@@ -1,19 +1,19 @@
 1. Template method.
 
 You should use template method when you want to delegate some portion of the code functionality to the concrete implementation.
-Let's say you have an abstract class which is a thread and has run method which is implemented inside this class. 
-Beside of this method you have also two other method like acquire and release. 
+Let's say you have an abstract class which is a thread and has run method which is implemented inside this class.
+Beside of this method you have also two other method like acquire and release.
 your run implementation of the run method looks like this:
 
 public void run(){
-	
+
 	acquire();
 	//some stuff
 	release();
 
 }
 
-In this case your template method is a run method an concrete implementation of the abstract class has implemetation for 
+In this case your template method is a run method an concrete implementation of the abstract class has implemetation for
 acquire and release methods.
 
 2. Factory
@@ -21,7 +21,7 @@ acquire and release methods.
 Factory pattern, by definition, is responsible for creating new objects. I like to think about it as a single place in my code where object production happens
 (the same as it is in e.g car factory).
 
-this is the example 
+this is the example
 
 public class CarFactory(){
 
@@ -29,7 +29,7 @@ public class CarFactory(){
 		SUV,
 		TRUCK
 	}
-	
+
 	private CarType carType = CarType.SUV;
 
 	public Car makeCar(){
@@ -37,52 +37,41 @@ public class CarFactory(){
 			//build suv
 		}else if(carType == CarType.TRUCK) {
 			//build truck
-		}		
+		}
 	}
 }
 
-This is of course the simplest example but right now you probably have the idea about the pattern. In next post I will try to present more advanced examples.  
+This is of course the simplest example but right now you probably have the idea about the pattern. In next post I will try to present more advanced examples.
 
-3. Stratagy. 
+3. Stratagy.
 
-It's a really easy to learn pattern. Maybe more dificult sometimes to use but in theory it's quite easy. It uses the principle of the polimorphism. 
+It's a really easy to learn pattern. Maybe more dificult sometimes to use but in theory it's quite easy. It uses the principle of the polimorphism.
 Basically first you need to create an interface or abstract class whith abstract methods. Yor interface or abstract class is the type you will use in your code
-and implementation is hidden below the interface or abstract class. 
-Let me give you an example. Imagine that we would like to implement some set of functionality which can be run on your desktop and mobile phone. 
+and implementation is hidden below the interface or abstract class.
+Let me give you an example. Imagine that we would like to implement some set of functionality which can be run on your desktop and mobile phone.
 First you need to define an abstract class which will be very general - call it PlatformStrategy
 
 public abstract class PlatformStrategy
 {
-	
+
 	public abstract void printMessage();
-	
+
 }
 
-Next step is define specyfic implementations: PlatformStrategyMobile and PlatformStrategyDesktop which extend PlatformStrategy. As you probably noticed 
-both method have printMessage method but ofcourse implementation of this method is different for each platform. 
+Next step is define specyfic implementations: PlatformStrategyMobile and PlatformStrategyDesktop which extend PlatformStrategy. As you probably noticed
+both method have printMessage method but ofcourse implementation of this method is different for each platform.
 In practice when you want to use it you will do something like this:
 
 PlatformStrategy platform = new PlatformStrategyDesktop();
 platform.printMessage();
-Ofcourse object creation can be change to something more conditional with some if statement or you can inject is through dependency injection or even read some 
+Ofcourse object creation can be change to something more conditional with some if statement or you can inject is through dependency injection or even read some
 file or system property and do some actions based on that.
 
 4. Bridge pattern
+Bridge pattern is a pattern which main aim is to help to structure your code in a way it is ready to add new
+functionality (modules, functions) and in the same time in theory it should mitigates the risk of breaking
+existing functionality.  
+
 Opisac na podstawie Socket w Javie
 
 Presentation:https://sway.com/7qu8H4yTdj3u8Ow8
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
