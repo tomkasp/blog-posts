@@ -70,7 +70,35 @@ file or system property and do some actions based on that.
 4. Bridge pattern
 Bridge pattern is a pattern which main aim is to help to structure your code in a way it is ready to add new
 functionality (modules, functions) and in the same time in theory it should mitigates the risk of breaking
-existing functionality.  
+existing functionality. This patterns fallows open/closed principle.
+Open - your code is open for the extenstions (new functionality, modules, functions)
+Closed - code is closed for a modification. New changes shouldn't break down existing functionality.
+This can be achieved by not so comlicated rekations beetwen objects. I will try to explain those relations.
+Let's use this picture from a Design Patterns: Elements of reusable software book.
+Even if you don't know uml you can read from the picture that there are few elements which works together. Let's break it into smaller pieces and explain everything
+But to do it we shuld use some real example of it. I will use Socket class from a java.net package
+http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/net/Socket.java
+
+Think about socket as a Abstraction from our picture. Socket class defines an API for the client
+which want to use it. It contains method like open (opens a socket) and close (close the scoket) etc.
+You can see that those method are high level for the Socket itself. So what about low level methods
+with actual implementation? Where you can find id? Answer is pretty simple you can find them in
+SocketImpl class. Socket class has a field called socketImpl http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/net/Socket.java#Socket.0impl
+Which type is SocketImpl. SocketImpl in our case is a Implementator from a picture and
+socketImpl is a concrete instance of it. Socket istelf is an abstract class and can't be
+initialized but there are multiple classes which extends SocketImpl class and they are
+ConcreteImplementator from our picture. For the socket example concrete implementators are:
+PlainSocket - delegations to the native socket methods
+SdpSocket - supports sdp protocol.
+SocksSocketImpl - SOCKS (V4 & V5) TCP socket implementation (RFC 1928).
+
+By default when you construct object Socket SocketImpl implementation is SocksSocketImpl but of course
+it can be different it depends on your needs.
+
+Last puzzle is a 
+
+
+
 
 Opisac na podstawie Socket w Javie
 
