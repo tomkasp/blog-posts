@@ -95,7 +95,14 @@ SocksSocketImpl - SOCKS (V4 & V5) TCP socket implementation (RFC 1928).
 By default when you construct object Socket SocketImpl implementation is SocksSocketImpl but of course
 it can be different it depends on your needs.
 
-Last puzzle is a 
+Last puzzle from our picture is RefinedAbstractions. You probably see that there is a relations
+between Abstraction (Socket) and RefinedAbstraction. This relation is a subclass. RefinedAbstraction
+extends Abstraction. In Socket case RefinedAbstractions are e.g. :
+HttpSendSocket
+SSLSocketImpl
+
+
+
 
 
 
