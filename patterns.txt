@@ -68,23 +68,23 @@ Ofcourse object creation can be change to something more conditional with some i
 file or system property and do some actions based on that.
 
 4. Bridge pattern
-Bridge pattern is a pattern which main aim is to help you structure your code in a way it is ready to add new functionality (modules, functions) and in the same time in theory it should mitigates the risk of breaking existing functionality. This patterns fallows open/closed principle.
+Bridge pattern is a pattern which main aim is to help you structure your code in a way it is ready to add new functionality (modules, functions) and in the same time it should mitigates the risk of breaking existing functionality. This patterns fallows open/closed principle.
 Open - your code is open for the extensions (new functionality, modules, functions)
 Closed - code is closed for a modification. New changes shouldn't break down existing functionality.
-This can be achieved by not so complicated relation between objects. I will try to explain this relations. Let's use this picture from a Design Patterns: Elements of reusable software book.
+This can be achieved by not so complicated relation between objects. I will try to explain this relation. Let's use below picture from a Design Patterns: Elements of reusable software book.
 
 bridge
 
 Even if you don't know UML you can read from the picture that there are few elements which works together. Let's break it into smaller pieces and explain everything. But to do it we should use some real example. I will use Socket class from a java.net package link
 
-Think about socket as a Abstraction rectangle from our picture. Socket class defines an API for the client which want to use it. It contains methods like open (opens a socket) and close (close the socket) etc.
-You can see that those methods are high level for the Socket itself. So what about low level methods with actual implementation? Where you can find id? Answer is pretty simple you can find them in SocketImpl link class. Socket class has a field called socketImpl which type is SocketImpl. SocketImpl in our case is a Implementator from the picture and
+Think about socket as an Abstraction rectangle from our picture. Socket class defines an API for the client which want to use it. It contains methods like open (opens the socket) and close (close the socket).
+You can see that those methods are high level for the Socket itself. So what about low level methods with actual implementation? Where you can find id? Answer is pretty simple you can find them in SocketImpl link class. Socket class has a field called socketImpl which type is SocketImpl. SocketImpl is in our case a Implementator from the picture and
 socketImpl is a concrete instance of it. SocketImpl itself is an abstract class and can't be initialized but there are multiple classes which extends SocketImpl class and they are ConcreteImplementator from our picture. For the socket example concrete implementators are:
 
 PlainSocket - delegations to the native socket methods
 SdpSocket - supports sdp protocol.
 SocksSocketImpl - SOCKS (V4 & V5) TCP socket implementation (RFC 1928).
-By default when you construct object Socket type of the field socketImpl within it is a SocketImpl  and implementation is SocksSocketImpl but of course it can be different it depends on your needs.
+Type of the field socketImpl by default  is a SocketImpl  and Iplementation is SocksSocketImpl, but of course it can be different it depends on your needs.
 
 Last puzzle from our picture is RefinedAbstractions. You probably see that there is a relations between Abstraction (Socket) and RefinedAbstraction. This relation is a subclass. RefinedAbstraction extends Abstraction. In Socket case RefinedAbstractions are e.g. :
 
@@ -96,9 +96,11 @@ From a javadoc:
 This is a normal connection type socket, implementing SSL over some lower level socket, such as TCP. Because it is layered over some lower level socket, it MUST override all default socket methods.
 RefinedAbstraction is sometimes needed to introduce new kind of a functionality. For a client methods should be the same (e.g. connect, close) but basic functionality is extended in this case.
 
+Useful links:
+
 https://dzone.com/articles/design-patterns-bridge
-
-
+youtube video
+wiki page with bridge pattern definition:  https://en.wikipedia.org/wiki/Bridge_pattern
 
 
 
