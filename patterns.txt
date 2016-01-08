@@ -108,3 +108,5 @@ wiki page with bridge pattern definition:  https://en.wikipedia.org/wiki/Bridge_
 Opisac na podstawie Socket w Javie
 
 Presentation:https://sway.com/7qu8H4yTdj3u8Ow8
+
+5. Adapter pattern
