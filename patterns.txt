@@ -110,3 +110,5 @@ Opisac na podstawie Socket w Javie
 Presentation:https://sway.com/7qu8H4yTdj3u8Ow8
 
 5. Adapter pattern
+
+Links:https://dzone.com/articles/design-patterns-uncovered-0
