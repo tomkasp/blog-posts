@@ -111,4 +111,7 @@ Presentation:https://sway.com/7qu8H4yTdj3u8Ow8
 
 5. Adapter pattern
 
+Different name: Wrapper. This is a pattern which function is to adjust some new
+functionality to the existing one.
+
 Links:https://dzone.com/articles/design-patterns-uncovered-0
