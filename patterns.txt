@@ -111,7 +111,17 @@ Presentation:https://sway.com/7qu8H4yTdj3u8Ow8
 
 5. Adapter pattern
 
-Different name: Wrapper. This is a pattern which function is to adjust some new
-functionality to the existing one.
+Different name: Wrapper. This is a pattern which function is to adjusts some new
+functionality to the existing one. Let's consider an example. Imagine that
+we have good define software responsible for report generation by users through a website.
+On your server side you have a defined interface Report and concreate implemantation
+of it BillingRaport. You want to extend your functionality and use new functionlity
+which you found inside some really good library provided by someone else. 
+
+Report
+
+Billing report
+
+OperatorReport
 
 Links:https://dzone.com/articles/design-patterns-uncovered-0
